@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="142.0" prefWidth="575.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerPantallaPrincipal">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="142.0" prefWidth="575.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerPantallaPrincipal">
    <children>
       <Text fx:id="txtTitulo" fill="#514949" layoutX="146.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sistema de registros - paquete y destino">
          <font>

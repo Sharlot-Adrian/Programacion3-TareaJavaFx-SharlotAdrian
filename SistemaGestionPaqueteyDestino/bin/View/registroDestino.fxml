@@ -23,7 +23,7 @@
       <Label fx:id="lblMensaje" layoutX="187.0" layoutY="178.0" text="Esperando acción..." />
       <TableView fx:id="tbvwDestinosRegistrados" layoutX="68.0" layoutY="204.0" prefHeight="200.0" prefWidth="349.0">
         <columns>
-          <TableColumn prefWidth="134.0" text="Destinos registrados" />
+          <TableColumn fx:id="idCasillaDestinos" prefWidth="134.0" text="Destinos registrados" />
         </columns>
       </TableView>
    </children>

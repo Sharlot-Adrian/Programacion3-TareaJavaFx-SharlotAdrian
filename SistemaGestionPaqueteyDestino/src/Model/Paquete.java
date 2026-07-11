@@ -4,13 +4,13 @@ public class Paquete {
 
     private String codigo;
     private String destinatario;
-    private double precio;
+    private double peso;
     private String destino;
 
-    public Paquete(String codigo, String destinatario, double precio, String destino){
+    public Paquete(String codigo, String destinatario, double peso, String destino){
         setCodigo(codigo);
         setDestinatario(destinatario);
-        setPrecio(precio);
+        setPeso(peso);
         setDestino(destino);
     }
 
@@ -20,8 +20,8 @@ public class Paquete {
     public String getDestinatario() {
         return destinatario;
     }
-    public double getPrecio() {
-        return precio;
+    public double getPeso() {
+        return peso;
     }
     public String getDestino() {
         return destino;
@@ -32,8 +32,8 @@ public class Paquete {
     public void setDestinatario(String destinatario) {
         this.destinatario = destinatario;
     }
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
     public void setDestino(String destino) {
         this.destino = destino;

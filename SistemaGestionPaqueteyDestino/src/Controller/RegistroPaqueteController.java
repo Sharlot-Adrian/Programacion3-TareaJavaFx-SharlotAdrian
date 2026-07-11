@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import model.Destino;
+import utils.ArchivoUtil;
 
 public class RegistroPaqueteController {
 
@@ -19,7 +22,7 @@ public class RegistroPaqueteController {
     private Button bttGuardarArchivo;
 
     @FXML
-    private ComboBox<String> cmbDestino;
+    private ComboBox<Destino> cmbDestino;
 
     @FXML
     private Label lblCodigo;
@@ -52,14 +55,18 @@ public class RegistroPaqueteController {
     private Text txtTitulo;
 
     @FXML
+    private ObservableList<Destino> opcionesDestino;
+
+    @FXML
     public void initialize(){
-        cmbDestino = new ComboBox<String>();
-        ObservableList<String> opcionesDestino = cmbDestino.getItems();
-        opcionesDestino.add("Santo Domingo");
-        opcionesDestino.add("Santiago");
-        opcionesDestino.add("La Vega");
+        
+        opcionesDestino = FXCollections.observableArrayList(ArchivoUtil.leerDestino());
+        opcionesDestino.add(new Destino("La Vega"));
+        opcionesDestino.add(new Destino("Santiago"));
+        cmbDestino.setItems(opcionesDestino);
         
     }
+    
 
     @FXML
     void cargarDestinos(ActionEvent event) {
@@ -68,6 +75,18 @@ public class RegistroPaqueteController {
 
     @FXML
     void guardarEnArchivo(ActionEvent event) {
+
+    }
+
+    @FXML
+    private void crearPaquete(){
+        String codigo = tfCodigo.getText();
+        String destinatario = tfNombreDestinatario.getText();
+        String pesoString = tfPesoPaquete.getText();
+
+        Double peso = Double.parseDouble(pesoString);
+        Destino destino = cmbDestino.getValue();
+
 
     }
 

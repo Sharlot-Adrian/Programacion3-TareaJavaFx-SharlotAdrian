@@ -22,7 +22,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#abrirRegistroPaquete" text="Registro de Paquete" />
                   <MenuItem mnemonicParsing="false" onAction="#abrirRegistroDestino" text="Registro de Destino" />
                   <MenuItem mnemonicParsing="false" onAction="#abrirConsultaPaquete" text="Consulta de Paquetes" />
-                  <MenuItem mnemonicParsing="false" onAction="#abrirConsultaDestino" text="Consulta de Destino" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirConsultaDestino" text="Consulta de Destinos" />
                   <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
                </items></Menu>
             <Menu mnemonicParsing="false" text="Proceso">

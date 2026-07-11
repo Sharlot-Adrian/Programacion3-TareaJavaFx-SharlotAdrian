@@ -3,15 +3,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuBar;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
+
 
 public class ControllerPantallaPrincipal {
-
-    private Stage pantallaPrincipal;
-
-    public void setPantallaPrincipal(Stage stage){
-        this.pantallaPrincipal = stage;
-    }
 
     @FXML
     private MenuBar mnbrOpciones;

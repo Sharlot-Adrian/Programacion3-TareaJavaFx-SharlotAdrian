@@ -12,6 +12,7 @@ public class ControllerPantallaPrincipal {
     public void setPantallaPrincipal(Stage stage){
         this.pantallaPrincipal = stage;
     }
+
     @FXML
     private MenuBar mnbrOpciones;
 
@@ -22,25 +23,30 @@ public class ControllerPantallaPrincipal {
     private Text txtTitulo;
 
     @FXML
-    void AbrirConsultaDestino(ActionEvent event) {
+    void abrirConsultaDestino(ActionEvent event) {
 
     }
 
     @FXML
-    void abrirConsultaPaquetes(ActionEvent event) {
+    void abrirConsultaPaquete(ActionEvent event) {
 
     }
 
     @FXML
-    void abrirRegistroDestinos(ActionEvent event) {
+    void abrirDemostracionHilos(ActionEvent event) {
 
     }
 
     @FXML
-    void abrirRegistroPaquetes(ActionEvent event) {
+    void abrirRegistroDestino(ActionEvent event) {
 
     }
 
+    @FXML
+    void abrirRegistroPaquete(ActionEvent event) {
+
+    }
+    
     @FXML
     void salir(ActionEvent event) {
 

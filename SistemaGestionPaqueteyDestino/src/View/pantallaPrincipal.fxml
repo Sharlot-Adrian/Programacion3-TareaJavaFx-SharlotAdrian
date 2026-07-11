@@ -2,26 +2,33 @@
 
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="142.0" prefWidth="575.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerPantallaPrincipal">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="142.0" prefWidth="359.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerPantallaPrincipal">
    <children>
-      <Text fx:id="txtTitulo" fill="#514949" layoutX="146.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sistema de registros - paquete y destino">
+      <Text fx:id="txtTitulo" fill="#514949" layoutX="45.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sistema de registros - paquete y destino">
          <font>
             <Font name="Franklin Gothic Demi" size="16.0" />
          </font>
       </Text>
-      <Text fx:id="txtSubtitulo" layoutX="225.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Qué desea hacer hoy?" />
+      <Text fx:id="txtSubtitulo" layoutX="117.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Qué desea hacer hoy?" />
       <MenuBar fx:id="mnbrOpciones" style="-fx-background-color: #9CB8B7;">
         <menus>
-          <Menu mnemonicParsing="false" onAction="#abrirRegistroPaquetes" text="Registro de paquetes" />
-            <Menu mnemonicParsing="false" onAction="#abrirRegistroPaquetes" text="Registro de destinos" />
-          <Menu mnemonicParsing="false" onAction="#abrirConsultaPaquetes" text="Consulta de paquetes" />
-            <Menu mnemonicParsing="false" onAction="#abrirRegistroPaquetes" text="Consulta de destinos" />
-            <Menu mnemonicParsing="false" onAction="#salir" text="Salir" />
+          <Menu mnemonicParsing="false" text="Archivo">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#abrirRegistroPaquete" text="Registro de Paquete" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirRegistroDestino" text="Registro de Destino" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirConsultaPaquete" text="Consulta de Paquetes" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirConsultaDestino" text="Consulta de Destino" />
+                  <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Proceso">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#abrirDemostracionHilos" text="Demostrar uso de Thread y Platform.runLater" />
+               </items></Menu>
         </menus>
       </MenuBar>
    </children>

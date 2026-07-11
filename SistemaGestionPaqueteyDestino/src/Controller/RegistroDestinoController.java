@@ -54,7 +54,13 @@ public class RegistroDestinoController {
 
     @FXML
     void cargarArchivo(ActionEvent event) {
-        listaDestinosFinal.setAll(ArchivoUtil.leerDestino());
+
+        if(!ArchivoUtil.leerDestino().isEmpty()){
+            listaDestinosFinal.setAll(ArchivoUtil.leerDestino());
+        }
+        else{
+            lblMensaje.setText("Debe de guardar nuevos destinos antes de cargarlos. ");
+        }
     }
 
     @FXML
@@ -63,6 +69,8 @@ public class RegistroDestinoController {
        String destinoTexto = tfNombreDestino.getText();
        Destino destino = new Destino(destinoTexto);
        ArchivoUtil.guardarDestino(destino);
+
+       tfNombreDestino.clear();
 
     }
 

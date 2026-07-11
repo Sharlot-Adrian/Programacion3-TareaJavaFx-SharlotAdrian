@@ -11,6 +11,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import model.Destino;
+import model.Paquete;
 import utils.ArchivoUtil;
 
 public class RegistroPaqueteController {
@@ -71,15 +72,28 @@ public class RegistroPaqueteController {
     @FXML
     void cargarDestinos(ActionEvent event) {
 
+        if(!ArchivoUtil.leerDestino().isEmpty()){
+            opcionesDestino.addAll(ArchivoUtil.leerDestino());
+        }
+        else{
+            lblMensaje.setText("Aun no ha agregado nuevos destinos");
+            
+        }
+
     }
 
     @FXML
     void guardarEnArchivo(ActionEvent event) {
 
+        ArchivoUtil.guardarPaquete(crearPaquete());
+        tfNombreDestinatario.clear();
+        tfCodigo.clear();
+        tfPesoPaquete.clear();
+        cmbDestino.setValue(null);
     }
 
     @FXML
-    private void crearPaquete(){
+    private Paquete crearPaquete(){
         String codigo = tfCodigo.getText();
         String destinatario = tfNombreDestinatario.getText();
         String pesoString = tfPesoPaquete.getText();
@@ -87,7 +101,9 @@ public class RegistroPaqueteController {
         Double peso = Double.parseDouble(pesoString);
         Destino destino = cmbDestino.getValue();
 
+        Paquete paquete = new Paquete(codigo, destinatario, peso, destino);
 
+        return paquete;
     }
 
 }

@@ -53,7 +53,7 @@ public class ArchivoUtil {
     public static void guardarPaquete(Paquete paquete){
         try{
 
-            FileWriter fr = new FileWriter("Paquetes.txt", true);
+            FileWriter fr = new FileWriter("paquetes.txt", true);
             fr.write(paquete.getCodigo() +";" +paquete.getDestinatario() +";" + paquete.getPeso()+";"+ paquete.getDestino());
 
             fr.close();
@@ -69,7 +69,7 @@ public class ArchivoUtil {
         ArrayList<Paquete> paquetes = new ArrayList<Paquete>();
 
         try{
-            FileReader fr = new FileReader("Paquetes.txt");
+            FileReader fr = new FileReader("paquetes.txt");
             BufferedReader br = new BufferedReader(fr);
 
             String linea;
@@ -81,7 +81,8 @@ public class ArchivoUtil {
                 if(partes.length == 4){
 
                     Double pesoNum = Double.parseDouble(partes[2]);
-                    Paquete paquete = new Paquete(partes[0], partes[1], pesoNum, partes[3]);
+                    Destino destino = new Destino(partes[3]);
+                    Paquete paquete = new Paquete(partes[0], partes[1], pesoNum, destino);
 
                     paquetes.add(paquete);
 

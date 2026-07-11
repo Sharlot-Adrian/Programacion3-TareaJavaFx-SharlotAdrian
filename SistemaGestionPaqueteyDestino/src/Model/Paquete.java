@@ -5,9 +5,9 @@ public class Paquete {
     private String codigo;
     private String destinatario;
     private double peso;
-    private String destino;
+    private Destino destino;
 
-    public Paquete(String codigo, String destinatario, double peso, String destino){
+    public Paquete(String codigo, String destinatario, double peso, Destino destino){
         setCodigo(codigo);
         setDestinatario(destinatario);
         setPeso(peso);
@@ -23,7 +23,7 @@ public class Paquete {
     public double getPeso() {
         return peso;
     }
-    public String getDestino() {
+    public Destino getDestino() {
         return destino;
     }
     public void setCodigo(String codigo) {
@@ -35,7 +35,7 @@ public class Paquete {
     public void setPeso(double peso) {
         this.peso = peso;
     }
-    public void setDestino(String destino) {
+    public void setDestino(Destino destino) {
         this.destino = destino;
     }
 

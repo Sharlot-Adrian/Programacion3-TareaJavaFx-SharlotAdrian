@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuBar;
 import javafx.scene.text.Text;
+import utils.Navegacion;
 
 
 public class ControllerPantallaPrincipal {
@@ -38,6 +39,8 @@ public class ControllerPantallaPrincipal {
 
     @FXML
     void abrirRegistroPaquete(ActionEvent event) {
+
+        Navegacion.abrirVentana("/view/consultaPaquetes.fxml", "Consulta de paquetes");
 
     }
     

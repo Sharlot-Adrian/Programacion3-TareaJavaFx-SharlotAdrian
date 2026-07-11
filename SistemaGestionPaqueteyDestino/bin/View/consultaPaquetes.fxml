@@ -18,10 +18,10 @@
       </Text>
       <TableView fx:id="tbPaquetes" layoutX="59.0" layoutY="81.0" prefHeight="200.0" prefWidth="302.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Código" />
-          <TableColumn prefWidth="75.0" text="Destinatario" />
-            <TableColumn prefWidth="75.0" text="Peso" />
-            <TableColumn prefWidth="75.0" text="Destino" />
+          <TableColumn fx:id="clmCodigo" prefWidth="75.0" text="Código" />
+          <TableColumn fx:id="clmDestinatario" prefWidth="75.0" text="Destinatario" />
+            <TableColumn fx:id="clmPeso" prefWidth="75.0" text="Peso" />
+            <TableColumn fx:id="clmDestino" prefWidth="75.0" text="Destino" />
         </columns>
       </TableView>
       <Button fx:id="bttCargarArchivo" layoutX="146.0" layoutY="293.0" mnemonicParsing="false" onAction="#cargarArchivo" text="Cargar desde archivo" />

@@ -21,7 +21,7 @@
       <Button fx:id="bttCargarArchivo" layoutX="100.0" layoutY="140.0" mnemonicParsing="false" onAction="#cargarArchivo" text="Cargar desde archivo" />
       <Button fx:id="bttGuardarArchivo" layoutX="248.0" layoutY="140.0" mnemonicParsing="false" onAction="#guardarArchivo" text="Guardar en archivo" />
       <Label fx:id="lblMensaje" layoutX="187.0" layoutY="178.0" text="Esperando acción..." />
-      <TableView fx:id="lstvwDestinosRegistrados" layoutX="68.0" layoutY="204.0" prefHeight="200.0" prefWidth="349.0">
+      <TableView fx:id="tbvwDestinosRegistrados" layoutX="68.0" layoutY="204.0" prefHeight="200.0" prefWidth="349.0">
         <columns>
           <TableColumn prefWidth="134.0" text="Destinos registrados" />
         </columns>

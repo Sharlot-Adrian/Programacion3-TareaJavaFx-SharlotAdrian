@@ -23,7 +23,7 @@ public class RegistroDestinoController {
     private Label lblNombreDestino;
 
     @FXML
-    private TableView<String> lstvwDestinosRegistrados;
+    private TableView<String> tbvwDestinosRegistrados;
 
     @FXML
     private TextField tfNombreDestino;

@@ -9,20 +9,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="479.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="479.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistroDestinoController">
    <children>
-      <Text layoutX="154.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de Destinos">
+      <Text fx:id="txtDestino" layoutX="154.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de Destinos">
          <font>
             <Font name="Franklin Gothic Medium" size="20.0" />
          </font>
       </Text>
-      <Label layoutX="183.0" layoutY="66.0" text="Nombre del destino:" />
-      <TextField layoutX="166.0" layoutY="92.0" />
-      <Button layoutX="100.0" layoutY="140.0" mnemonicParsing="false" text="Cargar desde archivo" />
-      <Button layoutX="248.0" layoutY="140.0" mnemonicParsing="false" text="Guardar en archivo" />
-      <Label layoutX="187.0" layoutY="178.0" text="Esperando acción..." />
-      <TableView layoutX="68.0" layoutY="204.0" prefHeight="200.0" prefWidth="349.0">
+      <Label fx:id="lblNombreDestino" layoutX="183.0" layoutY="66.0" text="Nombre del destino:" />
+      <TextField fx:id="tfNombreDestino" layoutX="166.0" layoutY="92.0" />
+      <Button fx:id="bttCargarArchivo" layoutX="100.0" layoutY="140.0" mnemonicParsing="false" onAction="#cargarArchivo" text="Cargar desde archivo" />
+      <Button fx:id="bttGuardarArchivo" layoutX="248.0" layoutY="140.0" mnemonicParsing="false" onAction="#guardarArchivo" text="Guardar en archivo" />
+      <Label fx:id="lblMensaje" layoutX="187.0" layoutY="178.0" text="Esperando acción..." />
+      <TableView fx:id="lstvwDestinosRegistrados" layoutX="68.0" layoutY="204.0" prefHeight="200.0" prefWidth="349.0">
         <columns>
           <TableColumn prefWidth="134.0" text="Destinos registrados" />
         </columns>

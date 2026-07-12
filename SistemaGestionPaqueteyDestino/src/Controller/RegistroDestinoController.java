@@ -67,6 +67,10 @@ public class RegistroDestinoController {
     void guardarArchivo(ActionEvent event) {
 
        String destinoTexto = tfNombreDestino.getText();
+       
+       if(destinoTexto.isEmpty()){
+            lblMensaje.setText("Debe ingresar un nombre para el destino.");
+       }
        Destino destino = new Destino(destinoTexto);
        ArchivoUtil.guardarDestino(destino);
 

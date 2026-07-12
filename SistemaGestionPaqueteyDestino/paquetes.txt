@@ -1,3 +1,0 @@
-0007;Shara;3.2;La Vega
-0009;Maria;2.1;Jarabacoa
-ooo;ooo;2.2;Jarabacoa

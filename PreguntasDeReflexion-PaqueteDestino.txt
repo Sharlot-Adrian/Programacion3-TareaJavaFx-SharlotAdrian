@@ -1,0 +1,32 @@
+1. ¿Cuál es la diferencia entre `Thread` y `Platform.runLater()`?
+-El Thread ejecuta tareas en segundo plano de forma paralela, mientras que Platform.runLater cede el control para 
+que la tarea se ejecute próximamente en el hilo de la interfaz.
+
+2. ¿Qué ocurre si se usa `Thread.sleep()` directamente dentro del evento de un botón?
+-La pantalla se congela, porque el metodo causa que el hilo de la interfaz gráfica se duerma.
+
+3. ¿Por qué no se debe actualizar un `Label` directamente desde un hilo secundario?
+-No se debe actualizar de esta forma, ya que la actualización de los distintos elementos debe ser manejada por el hilo
+de la interfaz. Al actualizarlo con un hilo secundario, esto podría resultar en un error, pues ambos hilos lucharían por
+hacer el cambio. 
+
+4. ¿Para qué sirve `BufferedReader`?
+-BufferedReader es una clase que permite leer texto contenido en un archivo. Esta es una alternativa eficiente
+a la lectura de archivos pues puede leer linea por linea, haciendo el proceso más rápido.
+
+5. ¿Para qué sirve `FileWriter`?
+-FileWriter es una clase que permite escribir en un archivo, a esta se le debe especificar en su constructor
+el nombre del archivo para que, si no existe, lo creé. Además, se especifica a través de un true en su constructor,
+si estará adjuntando las palabras, es decir, si no borrará lo que hay dentro del archivo cada vez que se abra para 
+escritura. 
+
+6. ¿Por qué es importante guardar la información en archivos?
+-Al guardarla en archivos, se le da un espacio en el disco duro y por lo tal, se mantiene la informacion, incluso cuando 
+se cierra el programa.
+
+7. ¿Qué ventaja tiene usar `ComboBox` para seleccionar destinos?
+-Es mejor pues el usuario no debe digitar nada, reduciendo los posibles errores que un nombre mal escrito podría causar.
+Además, es más fácil acceder y trabajar con lo elegido en el ComboBox gracias a su método .getValue().
+
+8. ¿Qué ventaja tiene usar `TableView` para consultar paquetes?
+-Es una forma limpia, clara y organizada de ver la información relevante a los paquetes que ya fueron registrados.

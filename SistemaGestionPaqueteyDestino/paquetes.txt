@@ -1,0 +1,2 @@
+0001;Juan Perez;2.2;La Vega
+0002;Maria Lopez;2.3;Jarabacoa

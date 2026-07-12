@@ -115,12 +115,14 @@ public class RegistroPaqueteController {
                 }
 
                 ArchivoUtil.guardarPaquete(paquete);
-                tfCodigo.clear();
-                tfNombreDestinatario.clear();
-                tfPesoPaquete.clear();
-                cmbDestino.setValue(null);
 
-
+                Platform.runLater(()->{
+                    tfCodigo.clear();
+                    tfNombreDestinatario.clear();
+                    tfPesoPaquete.clear();
+                    cmbDestino.setValue(null);
+                });
+                
             }catch(Exception e){
                 System.out.println("Error al guardar el paquete " + e.getMessage());
 

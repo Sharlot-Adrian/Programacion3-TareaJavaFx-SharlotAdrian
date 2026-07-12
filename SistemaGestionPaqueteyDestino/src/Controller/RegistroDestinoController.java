@@ -70,6 +70,7 @@ public class RegistroDestinoController {
        
        if(destinoTexto.isEmpty()){
             lblMensaje.setText("Debe ingresar un nombre para el destino.");
+            return;
        }
        Destino destino = new Destino(destinoTexto);
        ArchivoUtil.guardarDestino(destino);

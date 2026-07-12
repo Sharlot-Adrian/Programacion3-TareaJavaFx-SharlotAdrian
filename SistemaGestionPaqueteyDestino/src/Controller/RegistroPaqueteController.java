@@ -88,6 +88,11 @@ public class RegistroPaqueteController {
 
         Paquete paquete = crearPaquete();
 
+        if(paquete == null){
+            lblMensaje.setText("Ha dejado algun campo vacio. Intentelo de nuevo.");
+            return;
+        }
+
         lblMensaje.setText("Guardando en segundo plano...");
         prgresbrAvanceGuardado.setProgress(0);
 
@@ -139,6 +144,16 @@ public class RegistroPaqueteController {
 
         Double peso = Double.parseDouble(pesoString);
         Destino destino = cmbDestino.getValue();
+
+        if(codigo.isEmpty()){
+            return null;
+        }else if(destinatario.isEmpty()){
+            return null;
+        }else if(pesoString.isEmpty()){
+            return null;
+        }else if(destino == null){
+            return null;
+        }
 
         Paquete paquete = new Paquete(codigo, destinatario, peso, destino);
 

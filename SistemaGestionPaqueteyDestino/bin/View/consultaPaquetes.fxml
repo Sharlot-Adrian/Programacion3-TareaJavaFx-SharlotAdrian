@@ -24,6 +24,6 @@
         </columns>
       </TableView>
       <Button fx:id="bttCargarArchivo" layoutX="146.0" layoutY="293.0" mnemonicParsing="false" onAction="#cargarArchivo" text="Cargar desde archivo" />
-      <Label fx:id="lblMensaje" layoutX="160.0" layoutY="335.0" text="Esperando acción..." />
+      <Label fx:id="lblMensaje" alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="335.0" prefHeight="17.0" prefWidth="425.0" text="Esperando acción..." />
    </children>
 </AnchorPane>

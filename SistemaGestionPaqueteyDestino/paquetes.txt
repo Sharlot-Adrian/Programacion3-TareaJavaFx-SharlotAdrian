@@ -1,1 +1,2 @@
-009;Juan;1.2;La Vega998;Maria;2.2;Jarabacoa
+0008;Juan Perez;2.3;La Vega
+0002;Maria Duarte;2.2;Jarabacoa

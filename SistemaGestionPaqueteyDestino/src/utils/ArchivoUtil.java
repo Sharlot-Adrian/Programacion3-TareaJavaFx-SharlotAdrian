@@ -54,10 +54,12 @@ public class ArchivoUtil {
         try{
 
             FileWriter fr = new FileWriter("paquetes.txt", true);
-            fr.write(paquete.getCodigo() +";" +paquete.getDestinatario() +";" + paquete.getPeso()+";"+ paquete.getDestino());
+            fr.write(paquete.getCodigo() +";" +paquete.getDestinatario() +";" + paquete.getPeso()
+            +";"+ paquete.getDestino() + "\n");
 
             fr.close();
             System.out.println("Se guardo el paquete exitosamente. ");
+            
         }catch(Exception e){
             System.out.println("Error al guardar el paquete " + e.getMessage());
 

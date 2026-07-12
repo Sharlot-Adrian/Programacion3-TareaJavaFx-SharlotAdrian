@@ -2,12 +2,17 @@ package controller;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.text.Text;
 import utils.Navegacion;
 
 
 public class ControllerPantallaPrincipal {
+
+    @FXML
+    private ProgressBar prgrsbrSimulacion;
 
     @FXML
     private MenuBar mnbrOpciones;
@@ -17,6 +22,9 @@ public class ControllerPantallaPrincipal {
 
     @FXML
     private Text txtTitulo;
+
+    @FXML
+    private Label lblMensaje;
 
     @FXML
     void abrirConsultaDestino(ActionEvent event) {
@@ -34,6 +42,33 @@ public class ControllerPantallaPrincipal {
     @FXML
     void abrirDemostracionHilos(ActionEvent event) {
 
+        Thread hilo = new Thread(()->{
+            try{
+
+                for(int i = 0; i<=10;i++){
+                    Thread.sleep(300);
+                    int progreso = i;
+
+                    Platform.runLater(()->{
+                        prgrsbrSimulacion.setProgress(progreso/10.0);
+                        lblMensaje.setText("Actualizando entorno con hilos..." + (progreso * 10) +"%");
+
+                        if((progreso * 10) == 100){
+                            lblMensaje.setText("Todo listo!");
+                        }
+                    });
+
+                }
+
+
+            }catch(Exception e){
+
+            }finally{
+                prgrsbrSimulacion.setProgress(0);
+            }
+
+        });
+        hilo.start();
     }
 
     @FXML

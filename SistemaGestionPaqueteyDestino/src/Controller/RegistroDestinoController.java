@@ -71,6 +71,7 @@ public class RegistroDestinoController {
        ArchivoUtil.guardarDestino(destino);
 
        tfNombreDestino.clear();
+       lblMensaje.setText("Destino guardado exitosamente.");
 
     }
 

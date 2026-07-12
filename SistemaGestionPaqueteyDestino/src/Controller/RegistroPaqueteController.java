@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -76,7 +77,7 @@ public class RegistroPaqueteController {
             opcionesDestino.addAll(ArchivoUtil.leerDestino());
         }
         else{
-            lblMensaje.setText("Aun no ha agregado nuevos destinos");
+            lblMensaje.setText("Aun no ha agregado nuevos destinos.");
             
         }
 
@@ -85,11 +86,49 @@ public class RegistroPaqueteController {
     @FXML
     void guardarEnArchivo(ActionEvent event) {
 
-        ArchivoUtil.guardarPaquete(crearPaquete());
-        tfNombreDestinatario.clear();
-        tfCodigo.clear();
-        tfPesoPaquete.clear();
-        cmbDestino.setValue(null);
+        Paquete paquete = crearPaquete();
+
+        lblMensaje.setText("Guardando en segundo plano...");
+        prgresbrAvanceGuardado.setProgress(0);
+
+        Thread hilo = new Thread(() ->{
+
+            try{
+                for(int i = 0; i <=10; i++){
+                    Thread.sleep(300);
+                    int progreso = i;
+
+                    Platform.runLater(()->{
+                        prgresbrAvanceGuardado.setProgress(progreso/10.0);
+                        lblMensaje.setText("Guardando..." + (progreso * 10) + "%");
+
+                        if((progreso * 10) == 100){
+                            lblMensaje.setText("Guardado.");
+                        }
+                    });
+
+                }
+
+                ArchivoUtil.guardarPaquete(paquete);
+                tfCodigo.clear();
+                tfNombreDestinatario.clear();
+                tfPesoPaquete.clear();
+                cmbDestino.setValue(null);
+
+
+            }catch(Exception e){
+                System.out.println("Error al guardar el paquete " + e.getMessage());
+
+            }finally{
+                lblMensaje.setText("Paquete guardado con hilos exitosamente.");
+                prgresbrAvanceGuardado.setProgress(0);
+
+            }
+
+
+        });
+
+        hilo.start();
     }
 
     @FXML
